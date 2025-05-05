@@ -7,7 +7,8 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
-  IMAGE_NAME: gcr.io/${{ secrets.GCP_PROJECT_ID }}//storage
+  IMAGE_NAME_WEB: gcr.io/${{ secrets.GCP_PROJECT_ID }}/web
+  IMAGE_NAME_STORAGE: gcr.io/${{ secrets.GCP_PROJECT_ID }}/storage
 
 jobs:
   deploy:

@@ -7,7 +7,7 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
-  IMAGE_NAME: gcr.io/${{ secrets.GCP_PROJECT_ID }}/exam2025
+  IMAGE_NAME: gcr.io/${{ secrets.GCP_PROJECT_ID }}//storage
 
 jobs:
   deploy:
@@ -36,4 +36,4 @@ jobs:
         docker push $IMAGE_NAME_STORAGE:latest
     - name: Deploy to GKE
       run: |
-        gcloud container clusters get-credentials ${{ secrets.GKE_CLUSTER }} --zone E${{ secrets.GKE_ZONE }}
+        gcloud container clusters get-credentials ${{ secrets.GKE_CLUSTER }} --zone ${{ secrets.GKE_ZONE }}

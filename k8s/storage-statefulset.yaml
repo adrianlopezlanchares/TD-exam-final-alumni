@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: storage
-          image: gcr.io/icai2025/storage:latest
+          image: gcr.io/examen-final-adrian/storage:latest
           imagePullPolicy: 
           ports:
             - containerPort: 5432

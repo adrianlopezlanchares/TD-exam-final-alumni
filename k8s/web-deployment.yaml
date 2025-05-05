@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: gcr.io/icai2025/web:latest
+          image: gcr.io/examen-final-adrian/web:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 80

@@ -20,7 +20,7 @@ spec:
           image: gcr.io/icai2025/storage:latest
           imagePullPolicy: 
           ports:
-            - containerPort: 9000
+            - containerPort: 80
           volumeMounts:
             - name: storage-volume
               mountPath: /data
@@ -43,4 +43,4 @@ spec:
   selector:
     app: storage
   ports:
-    - port: 9000
+    - port: 80

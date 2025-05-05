@@ -1,34 +1,34 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: 
+  name: storage
 spec:
-  serviceName: ""
+  serviceName: "storage-headless"
   updateStrategy:
     type: RollingUpdate
-  replicas: 
+  replicas: 2
   selector:
     matchLabels:
-      app: 
+      app: storage
   template:
     metadata:
       labels:
-        app: 
+        app: storage
     spec:
       containers:
-        - name: 
+        - name: storage
           image: gcr.io/icai2025/storage:latest
           imagePullPolicy: 
           ports:
-            - containerPort: 
+            - containerPort: 9000
           volumeMounts:
-            - name: 
-              mountPath: 
+            - name: storage-volume
+              mountPath: /data
   volumeClaimTemplates:
     - metadata:
         name: storage-volume
       spec:
-        storageClassName: 
+        storageClassName: standard
         accessModes: ["ReadWriteOnce"]
         resources:
           requests:
@@ -41,6 +41,6 @@ metadata:
 spec:
   clusterIP: 
   selector:
-    app: 
+    app: storage
   ports:
-    - port: 
+    - port: 9000

@@ -1,6 +1,9 @@
 **/.terraform/
+
 .terraform.lock.hcl
 .terraform.tfstate.lock.info
 terraform.tfstate
+terraform.tfstate.backup
+.DS_Store
 
 examen-final-adrian-3017197d6fec.json

@@ -26,7 +26,7 @@ app.post('/phrase', async (req, res) => {
 
   const wordCount = phrase.trim().split(/\s+/).length;
   const instance = wordCount % 2 === 0 ? '0' : '1';
-  const url = `http://${STORAGE_SVC_HOST}-${instance}.storage:8080/store`;
+  const url = `http://${STORAGE_SVC_HOST}-${instance}.storage:80/store`;
 
   try {
     await axios.post(url, { phrase });
@@ -45,6 +45,6 @@ app.get('/probe', async (req, res) => {
   }
 });
 
-app.listen(8080, () => {
-  console.log('Web service running on port 8080');
+app.listen(80, () => {
+  console.log('Web service running on port 80');
 });

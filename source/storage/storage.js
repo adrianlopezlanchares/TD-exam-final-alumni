@@ -23,6 +23,6 @@ app.post('/store', (req, res) => {
   });
 });
 
-app.listen(80, () => {
-  console.log('Storage service running on port 9000');
+app.listen(5432, () => {
+  console.log('Storage service running on port 5432');
 });
